@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Chirp App [MVA]</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <header>
+  <div class="jumbotron text-center">
+    <h1>Chirp</h1>
+    <p>Basic MEAN stack App</p>
+  </div>
+</header>
+
+<div id="wrapper" ng-app="animakuzChirpApp" class="row">  
+  <div id="main" ng-controller="mainCtrl" class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+
+    <div class="well">    
+      <form ng-submit="post()">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Your name" required 
+                     ng-model="newPost.createdBy" />
+            </div>                
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group">                  
+              <textarea class="form-control" rows="3" maxLength="200" 
+                        placeholder="Say something" 
+                        ng-model="newPost.text" required></textarea>                  
+            </div>
+          </div>            
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <input type="submit" class="btn btn-primary" value="Chirp!" />             
+          </div>              
+        </div>
+      </form>        
+    </div> <!--end form well-->
+
+    <div id="post-stream" class="row">
+      <div class="col-md-12">
+
+        <h4>Chirp Feed</h4>
+
+        <div class="post" ng-repeat="post in posts | orderBy:'createdAt':true">
+          <div class="post-title row">
+            <div class="col-xs-6">
+              <p><span class="post-created-by">{{post.createdBy}}</span></p>      
+            </div>
+            <div class="col-xs-6">
+              <p class="text-right"><small class="post-created-at">{{post.createdAt | date:"h:mm a 'on' MMM d, y"}}</small></p>         
+            </div>
+          </div>
+          <div class="row">              
+            <div class="col-xs-12">
+              <p class="post-text">{{post.text}}</p>    
+            </div>
+          </div>
+        </div>
+
+      </div> 
+    </div>  <!--end post stream--> 
+    
+  </div><!-- end main/col-marker -->
+</div><!-- end wrapper/row-->
+
+<footer class="text-center">Created by Vaishnavi Sowany</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+header .jumbotron {
+  background-color: #c3c8bc;
+}
+footer {
+  padding: 20px 0;
+  background-color: #c3c8bc;
+}
+#wrapper {
+  width: 98%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+#post-stream {
+  padding-bottom: 20px;
+}
+.post {
+  margin-top: 20px;
+}
+.post-created-by {
+  font-size: 16px;
+  vertical-align: bottom;
+}
+.post-text {
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #e9eae6;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.14);
+}
+.post-text:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 30px;
+  width: 16px;
+  height: 16px;
+  border-left: 1px solid rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(0, 0, 0, 0.6);
+  background-color: #e9eae6;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.post-created-at {
+  vertical-align: bottom;
+}
